@@ -1,0 +1,25 @@
+/* ROXO #7347C1 */
+
+.bg-primary{
+    background:#11455B !important;
+}
+
+.bg-secondary{
+    background:#E04A2A !important;
+}
+
+.color-primary{
+    color:#11455B !important;
+}
+
+.color-secondary{
+    color:#E04A2A !important;
+}
+
+.highlighted {
+    font-size:50px;
+}
+
+.single_feature .feature__icon {
+    vertical-align: top !important;
+}

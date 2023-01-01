@@ -1,0 +1,35 @@
+/* PRIMARY #11455B */
+/* SECONDARY #E04A2A */
+
+
+body {
+    color: #11455B;
+}
+
+a{
+    color: #E04A2A;
+}
+
+
+.btn-primary {
+    background:#11455B !important;
+    background:#11455B !important;
+}
+
+
+.bg-primary{
+    background:#11455B !important;
+}
+
+.bg-secondary{
+    background:#E04A2A !important;
+}
+
+.color-primary{
+    color:#11455B !important;
+}
+
+.color-secondary{
+    color:#E04A2A !important;
+}
+
