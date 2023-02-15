@@ -62,7 +62,6 @@ return new class extends Migration
             $table->string('zipcode')->nullable();
             $table->boolean('main');
 
-
             $table->timestamps();
             $table->softDeletes();
 

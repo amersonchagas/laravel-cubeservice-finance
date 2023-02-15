@@ -14,11 +14,8 @@ class DashboardController extends Controller
 
     public function show()
     {
-        $projects =  Project::get();
-        $tasks =  ProjectTask::get();
-        $customers =  User::get();
         $users =  User::get();
-        return view('manager.modules.dashboard.show', compact('projects', 'tasks','customers', 'users'));
+        return view('manager.modules.dashboard.show', compact( 'users'));
     }
 
 

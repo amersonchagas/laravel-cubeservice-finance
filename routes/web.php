@@ -4,33 +4,28 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Site\PageController;
-use App\Http\Controllers\Site\TenantPageController;
-use App\Models\Web;
-use App\Models\State;
+use App\Http\Controllers\Manager\DashboardController;
+use App\Http\Controllers\Manager\OrderController;
+use App\Http\Controllers\Manager\UserController;
+
+Route::domain(env('DOMAIN'))->middleware('tenant')->group(function () {
 
 
+    Route::get('/', [PageController::class, 'index']);
 
-/*Route::get('/',             [PageController::class, 'home'])->name('site.home');
-Route::get('/sobre-nos',    [PageController::class, 'about'])->name('site.about');
-Route::get('/servicos',     [PageController::class, 'services'])->name('site.services');
-Route::get('/produtos',     [PageController::class, 'products'])->name('site.products');
-Route::get('/contato',      [PageController::class, 'contact'])->name('site.contact');
+    //Manager
+    Route::name('manager.')->prefix('manager')->group( function () {
 
-*/
-Route::domain('{tenant}.'.env('DOMAIN'))->middleware('tenant')->group(function () {
-    Route::get('/', function () {
+        Route::get('/', [DashboardController::class, 'show'])->name('index');
 
-        $states = State::all();
-        return $states;
-        // return view('welcome');
+        Route::get('/user/list', [UserController::class, 'list']);
+        Route::get('/user/create', [UserController::class, 'create']);
+
+        Route::get('/order/list',   [OrderController::class, 'list']);
+        Route::get('/order/create', [OrderController::class, 'create']);
     });
-});
 
 
-Route::domain(env('DOMAIN'))->group(function () {
-    Route::get('/', function () {
-        dd('hello landlord');
-    });
 });
 
 

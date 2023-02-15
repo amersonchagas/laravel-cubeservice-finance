@@ -16,9 +16,7 @@ class Tenant extends Model
 
     public function makeCurrent(): static
     {
-
         if($this->service == env('SERVICE')) {
-
 
             if ($this->isCurrent()) {
                 return $this;

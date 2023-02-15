@@ -39,7 +39,6 @@ return new class extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')->onDelete('cascade');
-
         });
 
         Schema::create('order_itens', function(Blueprint $table){
@@ -74,7 +73,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
         Schema::dropIfExists('order_itens');
+        Schema::dropIfExists('orders');
     }
 };

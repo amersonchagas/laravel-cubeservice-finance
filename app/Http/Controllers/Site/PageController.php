@@ -12,30 +12,11 @@ class PageController extends Controller
 {
 
 
-    public function home()
+    public function index()
     {
         return view('site.pages.home');
     }
 
-    public function about()
-    {
-        return view('site.pages.about');
-    }
 
-
-    public function services()
-    {
-        return view('site.pages.services');
-    }
-
-    public function products()
-    {
-        return view('site.pages.products');
-    }
-
-    public function contact()
-    {
-        return view('site.pages.contact');
-    }
 
 }
